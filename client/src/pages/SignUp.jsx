@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link,useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ImFacebook } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
 import { TfiLinkedin } from "react-icons/tfi";
@@ -36,8 +36,8 @@ const SignUp = () => {
         return setErrorMessage(data.message)
       }
       setLoading(false);
-      if(res.ok){
-        navigate('/sign-in'); 
+      if (res.ok) {
+        navigate('/sign-in');
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -84,20 +84,20 @@ const SignUp = () => {
             <Label value='Password' className="text-gray-300 font-mono text-md" />
             <input required onChange={handleChange} id="password" type='password' placeholder='Password' className='bg-transparent rounded-lg border py-2 px-5 outline-none placeholder:text-gray-400 border-gray-400' />
             <button className='border w-fit mx-auto py-2 mt-5 px-10 rounded-xl text-xl font-semibold hover:bg-cyan-900/60 '
-            // disabled={submitButtondisable}  onClick={handleSubmission}
-            disabled={loading}
+              // disabled={submitButtondisable}  onClick={handleSubmission}
+              disabled={loading}
             >
               {
                 loading ? (
                   <>
-                  <Spinner size='sm'/>
-                  <span className="pl-3">Loading....</span>
+                    <Spinner size='sm' />
+                    <span className="pl-3">Loading....</span>
                   </>
                 ) : 'Register'
               }
             </button>
           </form>
-         
+
           <span className="flex text-center gap-2">Have a account ? <Link to="/sign-in" className="underline" onClick={<SignIn />}> Click Here</Link></span>
           <p className='text-[20px] py-2 mx-auto font-semibold'>- - - Or Login with - - -</p>
           <div className="social-container mx-auto mt-4 flex gap-7">
